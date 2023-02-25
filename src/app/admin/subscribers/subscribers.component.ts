@@ -1,3 +1,4 @@
+import { Subscriber } from './../../shared/models/subscriber.model';
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
@@ -8,7 +9,7 @@ import { DataService } from '../../services/data.service';
 })
 export class SubscribersComponent {
 
-  subscribers: any = []
+  subscribers: Subscriber[] = []
   allSubscribers: number = 0;
   pagination: number = 1;
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
+import { Subscriber } from '../../shared/models/subscriber.model';
 
 @Component({
   selector: 'app-subscriber',
@@ -8,7 +9,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./subscriber.component.scss'],
 })
 export class SubscriberComponent {
-  subscriber: any = [];
+  public subscriber: Subscriber[] = []
   id:any = 0
 
   constructor(
