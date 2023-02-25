@@ -15,6 +15,10 @@ export class NavbarAdminComponent {
 
   rutas = [
     {
+      name: "Home",
+      path: "/admin"
+    },
+    {
       name: "Add subscribers",
       path: "/admin/add/subscriber"
     }

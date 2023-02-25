@@ -31,7 +31,7 @@ export class DataService {
     return this.http.get<any>(url, this.options);
   }
 
-  getSubscriber(id:number) {
+  getSubscriber(id: number) {
     this.getToken();
     const url = `${environment.ApiUrl}subscribers/${id}`;
     return this.http.get<any>(url, this.options);
@@ -43,10 +43,16 @@ export class DataService {
     return this.http.get<any>(url, this.options);
   }
 
-  updateSubscriber(data:any, id:number) {
-    console.log(id)
+  updateSubscriber(data: any, id: number) {
     this.getToken();
     const url = `${environment.ApiUrl}subscribers/${id}`;
-    return this.http.put<any>(url, data,this.options);
+    return this.http.put<any>(url, data, this.options);
+  }
+
+  createSubscriber(data:any) {
+    console.log(data)
+    this.getToken();
+    const url = `${environment.ApiUrl}subscribers/`;
+    return this.http.post<any>(url, data, this.options);
   }
 }

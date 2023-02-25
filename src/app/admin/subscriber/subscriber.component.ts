@@ -24,6 +24,7 @@ export class SubscriberComponent {
     private dataService: DataService,
     private fb: FormBuilder
   ) {}
+
   ngOnInit() {
     this.id = this.router.url.split('/')[3];
     this.fetchSubscriber();
@@ -74,7 +75,5 @@ export class SubscriberComponent {
     });
   }
 
-  changeCountryCode(){
 
-  }
 }
