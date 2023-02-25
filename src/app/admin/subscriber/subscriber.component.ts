@@ -17,6 +17,7 @@ import {
 export class SubscriberComponent {
   public subscriber: any = [];
   id: any = 0;
+  codes:any = [];
 
   constructor(
     private router: Router,
@@ -26,7 +27,7 @@ export class SubscriberComponent {
   ngOnInit() {
     this.id = this.router.url.split('/')[3];
     this.fetchSubscriber();
-    //this.subscriberForm.setValue('Cat');
+    this.getCodes();
   }
   subscriberForm = this.fb.group({
     Name: ['', Validators.required],
@@ -58,12 +59,22 @@ export class SubscriberComponent {
       this.dataService.updateSubscriber(formValue, this.id).subscribe(
         (response) => {
           this.router.navigate(['/admin/subscribers']);
-
         },
         (error) => {
           console.error(error.error.error);
         }
       );
     }
+  }
+
+  getCodes(){
+    this.dataService.getCodes().subscribe((data: any) => {
+      this.codes = data.Data;
+
+    });
+  }
+
+  changeCountryCode(){
+
   }
 }

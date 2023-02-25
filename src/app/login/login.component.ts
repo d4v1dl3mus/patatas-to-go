@@ -32,7 +32,7 @@ export class LoginComponent {
     this.authervice.login(formValue.user, formValue.password).subscribe(
       (response) => {
         localStorage.setItem('Token', JSON.stringify(response.Token));
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/admin/subscribers']);
 
       },
       (error) => {

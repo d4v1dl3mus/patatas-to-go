@@ -8,13 +8,15 @@ import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SubscriberComponent } from './subscriber/subscriber.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddComponent } from './add/add.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     SubscribersComponent,
-    SubscriberComponent
+    SubscriberComponent,
+    AddComponent
   ],
   imports: [
     CommonModule,

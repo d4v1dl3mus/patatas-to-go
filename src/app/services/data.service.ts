@@ -37,7 +37,14 @@ export class DataService {
     return this.http.get<any>(url, this.options);
   }
 
+  getCodes() {
+    this.getToken();
+    const url = `${environment.ApiUrl}countries/`;
+    return this.http.get<any>(url, this.options);
+  }
+
   updateSubscriber(data:any, id:number) {
+    console.log(id)
     this.getToken();
     const url = `${environment.ApiUrl}subscribers/${id}`;
     return this.http.put<any>(url, data,this.options);
