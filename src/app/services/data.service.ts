@@ -15,8 +15,6 @@ export class DataService {
     return this.http.post<any>(url, { UserName: user, Password: password });
   }
 
-  isAuthenticated(): boolean {
-    const isAuthenticated = JSON.parse(localStorage.getItem('Token') || '{}') ? true : false;
-    return isAuthenticated;
-  }
+
+
 }

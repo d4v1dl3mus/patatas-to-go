@@ -17,6 +17,12 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
+  logout() {
+    // remove user from local storage to log user out
+    localStorage.removeItem('Token');
+    this.currentUserSubject.next(null);
+  }
+
   IsLoggedIn() {
     return !!localStorage.getItem('Token');
   }
