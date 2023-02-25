@@ -7,6 +7,7 @@ import { SubscribersComponent } from './subscribers/subscribers.component';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SubscriberComponent } from './subscriber/subscriber.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SubscriberComponent } from './subscriber/subscriber.component';
     AdminRouting,
     SharedModuleModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

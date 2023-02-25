@@ -2,6 +2,12 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { Subscriber } from '../../shared/models/subscriber.model';
+import {
+  FormGroup,
+  FormControl,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-subscriber',
@@ -9,22 +15,55 @@ import { Subscriber } from '../../shared/models/subscriber.model';
   styleUrls: ['./subscriber.component.scss'],
 })
 export class SubscriberComponent {
-  public subscriber: Subscriber[] = []
-  id:any = 0
+  public subscriber: any = [];
+  id: any = 0;
 
   constructor(
     private router: Router,
-    private dataService: DataService
+    private dataService: DataService,
+    private fb: FormBuilder
   ) {}
-
   ngOnInit() {
-    this.id = this.router.url.split('/')[3]
+    this.id = this.router.url.split('/')[3];
     this.fetchSubscriber();
+    //this.subscriberForm.setValue('Cat');
   }
+  subscriberForm = this.fb.group({
+    Name: ['', Validators.required],
+    Email: [''],
+    CountryCode: [''],
+    PhoneNumber: [''],
+    JobTitle: [''],
+    Area: [''],
+    Topics: [''],
+  });
 
   fetchSubscriber() {
     this.dataService.getSubscriber(this.id).subscribe((data: any) => {
-      this.subscriber = data.Data;
+      this.subscriber = data;
+      if (this.subscriber) {
+        this.subscriberForm?.patchValue(this.subscriber);
+      }
     });
+  }
+
+  onSubmit() {
+    const email = this.subscriberForm.get('Email');
+    const countryCode = this.subscriberForm.get('CountryCode');
+    const formValue = this.subscriberForm.value;
+    if (
+      email?.value != '' ||
+      (countryCode?.value != '' && this.subscriberForm.valid)
+    ) {
+      this.dataService.updateSubscriber(formValue, this.id).subscribe(
+        (response) => {
+          this.router.navigate(['/admin/subscribers']);
+
+        },
+        (error) => {
+          console.error(error.error.error);
+        }
+      );
+    }
   }
 }

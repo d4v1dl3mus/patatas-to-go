@@ -1,3 +1,29 @@
 <app-navbar-admin></app-navbar-admin>
 
 <p>subscriber works!</p>
+
+<form [formGroup]="subscriberForm" (ngSubmit)="onSubmit()">
+  <label for="first-name">Name: </label>
+  <input id="first-name" type="text" formControlName="Name" />
+
+  <label for="last-name">Email: </label>
+  <input id="last-name" type="text" formControlName="Email" />
+
+  <label for="last-name">CountryCode: </label>
+  <input id="last-name" type="text" formControlName="CountryCode" />
+
+  <label for="last-name">PhoneNumber: </label>
+  <input id="last-name" type="text" formControlName="PhoneNumber" />
+
+  <label for="last-name">JobTitle: </label>
+  <input id="last-name" type="text" formControlName="JobTitle" />
+
+  <label for="last-name">Area: </label>
+  <input id="last-name" type="text" formControlName="Area" />
+
+  <label for="last-name">Topics: </label>
+  <input id="last-name" type="text" formControlName="Topics" />
+
+  <p>Complete the form to enable button.</p>
+  <button type="submit" >Submit</button>
+</form>

@@ -36,4 +36,10 @@ export class DataService {
     const url = `${environment.ApiUrl}subscribers/${id}`;
     return this.http.get<any>(url, this.options);
   }
+
+  updateSubscriber(data:any, id:number) {
+    this.getToken();
+    const url = `${environment.ApiUrl}subscribers/${id}`;
+    return this.http.put<any>(url, data,this.options);
+  }
 }
