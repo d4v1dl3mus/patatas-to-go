@@ -1,0 +1,9 @@
+<app-navbar-admin></app-navbar-admin>
+<p>subscribers works!</p>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let subscriber of subscribers">
+    <h2>{{subscriber.Name}}</h2>
+    <p>{{subscriber.CountryName}}</p>
+  </li>
+</ul>

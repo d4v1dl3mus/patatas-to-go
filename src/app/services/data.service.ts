@@ -1,20 +1,33 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError, catchError, map } from 'rxjs';
+import { throwError, catchError, map, tap } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
+  public options: any;
+
   constructor(private http: HttpClient) {}
 
-  login(user: any, password: any) {
-    const url = environment.ApiUrl + 'account/login';
+  getToken() {
+    const token = JSON.parse(localStorage.getItem('Token') || '{}');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    });
 
-    return this.http.post<any>(url, { UserName: user, Password: password });
+    this.options = { headers: headers };
   }
 
-
-
+  getSubscribers() {
+    this.getToken();
+    const url = environment.ApiUrl + 'subscribers/';
+    return this.http.get<any>(url, this.options)
+  }
 }
