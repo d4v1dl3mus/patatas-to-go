@@ -5,7 +5,7 @@ import { AdminRouting } from './admin.routing';
 import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { SubscribersComponent } from './subscribers/subscribers.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     AdminRouting,
     SharedModuleModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ]
 })
 export class AdminModule { }

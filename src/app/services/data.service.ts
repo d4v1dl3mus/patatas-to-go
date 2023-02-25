@@ -25,9 +25,9 @@ export class DataService {
     this.options = { headers: headers };
   }
 
-  getSubscribers() {
+  getSubscribers( page: number) {
     this.getToken();
-    const url = environment.ApiUrl + 'subscribers/';
-    return this.http.get<any>(url, this.options)
+    const url = `${environment.ApiUrl}subscribers/?count=5&page=${page}`;
+    return this.http.get<any>(url, this.options);
   }
 }
