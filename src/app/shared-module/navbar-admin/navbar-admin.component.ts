@@ -12,6 +12,14 @@ export class NavbarAdminComponent {
     public authenticationService: AuthService,
     private router: Router
   ) {}
+
+  rutas = [
+    {
+      name: "subscribers",
+      path: "/admin/subscribers"
+    }
+  ]
+
   logout() {
     this.authenticationService.logout();
     this.router.navigate(['/auth/login']);

@@ -6,12 +6,14 @@ import { SharedModuleModule } from '../shared-module/shared-module.module';
 import { SubscribersComponent } from './subscribers/subscribers.component';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { SubscriberComponent } from './subscriber/subscriber.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    SubscribersComponent
+    SubscribersComponent,
+    SubscriberComponent
   ],
   imports: [
     CommonModule,

@@ -27,7 +27,6 @@ export class SubscribersComponent {
 
   renderPage(event: number) {
     this.pagination = event;
-    console.log(event);
     this.fetchSubscribers();
   }
 }

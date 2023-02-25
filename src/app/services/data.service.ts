@@ -25,9 +25,15 @@ export class DataService {
     this.options = { headers: headers };
   }
 
-  getSubscribers( page: number) {
+  getSubscribers(page: number) {
     this.getToken();
-    const url = `${environment.ApiUrl}subscribers/?count=5&page=${page}`;
+    const url = `${environment.ApiUrl}subscribers/?count=8&page=${page}`;
+    return this.http.get<any>(url, this.options);
+  }
+
+  getSubscriber(id:number) {
+    this.getToken();
+    const url = `${environment.ApiUrl}subscribers/${id}`;
     return this.http.get<any>(url, this.options);
   }
 }
