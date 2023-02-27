@@ -68,11 +68,8 @@ export class AddComponent {
   onSubmit() {
     const email = this.subscribersForm.get('Email');
     const countryCode = this.subscribersForm.get('CountryCode');
-    const topics = this.subscribersForm.get('Topics');
     const formValue = this.subscribersForm.value;
 
-    console.log(formValue)
-    /* debugger */
     if (
       email?.value != '' ||
       (countryCode?.value != '' && this.subscribersForm.valid)

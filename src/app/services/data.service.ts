@@ -55,4 +55,10 @@ export class DataService {
     const url = `${environment.ApiUrl}subscribers/`;
     return this.http.post<any>(url, data, this.options);
   }
+
+  deleteSubscriber(id:number) {
+    this.getToken();
+    const url = `${environment.ApiUrl}subscribers/${id}`;
+    return this.http.delete<any>(url, this.options);
+  }
 }
