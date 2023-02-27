@@ -31,10 +31,10 @@ export class SubscribersComponent {
     this.fetchSubscribers();
   }
 
-  onDelete(id:number) {
+  onDelete(id: number) {
     this.dataService.deleteSubscriber(id).subscribe(
       (response) => {
-        this.router.navigate(['/admin/subscribers']);
+      this.fetchSubscribers();
       },
       (error) => {
         console.error(error.error.error);
