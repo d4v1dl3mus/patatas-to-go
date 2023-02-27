@@ -34,7 +34,7 @@
             formControlName="CountryCode"
           >
             <option value="">Choose your city</option>
-            <option *ngFor="let code of codes">{{ code.Name }}</option>
+            <option *ngFor="let code of codes" value="{{code.Code}}">{{ code.Name }}</option>
           </select>
           <label class="form-label" for="form6Example5">CountryCode</label>
         </div>
