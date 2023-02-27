@@ -13,7 +13,7 @@
             class="form-control"
             formControlName="Name"
           />
-          <label class="form-label" for="form6Example3">Name</label>
+          <label class="form-label" for="form6Example3"  i18n>Name</label>
         </div>
 
         <!-- Text input -->
@@ -24,7 +24,7 @@
             class="form-control"
             formControlName="Email"
           />
-          <label class="form-label" for="form6Example4">Email</label>
+          <label class="form-label" for="form6Example4" i18n>Email</label>
         </div>
 
         <!-- Email input -->
@@ -33,10 +33,10 @@
             class="custom-select form-control"
             formControlName="CountryCode"
           >
-            <option value="">Choose your city</option>
+            <option value="" i18n>Choose your city</option>
             <option *ngFor="let code of codes" value="{{code.Code}}">{{ code.Name }}</option>
           </select>
-          <label class="form-label" for="form6Example5">CountryCode</label>
+          <label class="form-label" for="form6Example5" i18n>CountryCode</label>
         </div>
 
         <!-- Number input -->
@@ -47,7 +47,7 @@
             class="form-control"
             formControlName="PhoneNumber"
           />
-          <label class="form-label" for="form6Example6">PhoneNumber</label>
+          <label class="form-label" for="form6Example6" i18n>PhoneNumber</label>
         </div>
 
         <!-- Message input -->
@@ -58,7 +58,7 @@
             rows="4"
             formControlName="JobTitle"
           />
-          <label class="form-label" for="form6Example7">JobTitle</label>
+          <label class="form-label" for="form6Example7" i18n>JobTitle</label>
         </div>
 
         <!-- Message input -->
@@ -69,7 +69,7 @@
             rows="4"
             formControlName="Area"
           />
-          <label class="form-label" for="form6Example7">Area</label>
+          <label class="form-label" for="form6Example7" i18n>Area</label>
         </div>
 
         <!-- Message input -->
@@ -80,13 +80,13 @@
             rows="4"
             formControlName="Topics"
           />
-          <label class="form-label" for="form6Example7">Topics</label>
+          <label class="form-label" for="form6Example7" i18n>Topics</label>
         </div>
         <button
           type="button"
           (click)="removeSkill(i)"
           class="w-100 btn btn-outline-danger btn-block mb-4"
-        >
+          i18n>
           Remove
         </button>
         <!-- <button (click)="removeSkill(i)">Remove</button> -->
@@ -95,14 +95,14 @@
     </div>
   </div>
 
-  <button type="submit" class="w-100 btn btn-primary btn-block mb-4">
+  <button type="submit" class="w-100 btn btn-primary btn-block mb-4" i18n>
     Submit
   </button>
 </form>
 <button
   type="button"
   (click)="addsubscribers()"
-  class="w-100 btn btn-primary btn-block mb-4"
+  class="w-100 btn btn-primary btn-block mb-4" i18n
 >
   Add
 </button>

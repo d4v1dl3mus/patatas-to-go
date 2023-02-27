@@ -47,7 +47,7 @@
           <button
             type="button"
             class="btn btn-outline-primary"
-            [routerLink]="['/admin/subscriber/', subscriber.Id]"
+            [routerLink]="['/admin/subscriber/', subscriber.Id]" i18n
           >
             Edit
           </button>
@@ -55,7 +55,7 @@
             type="button"
             class="btn btn-outline-danger"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#exampleModal" i18n
           >
             Delete
           </button>
@@ -70,7 +70,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel" i18n>
                    Delete
                   </h1>
                   <button
@@ -80,16 +80,16 @@
                     aria-label="Close"
                   ></button>
                 </div>
-                <div class="modal-body">¿Are you sure you want to delete?</div>
+                <div class="modal-body" i18n>¿Are you sure you want to delete?</div>
                 <div class="modal-footer">
                   <button
                     type="button"
                     class="btn btn-secondary"
-                    data-bs-dismiss="modal"
+                    data-bs-dismiss="modal" i18n
                   >
                     No
                   </button>
-                  <button type="button" class="btn btn-outline-danger" (click)="onDelete(subscriber.Id)">
+                  <button type="button" class="btn btn-outline-danger" (click)="onDelete(subscriber.Id)" i18n>
                     Yes
                   </button>
                 </div>

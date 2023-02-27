@@ -4,13 +4,13 @@
   <!-- Text input -->
   <div class="form-outline mb-4">
     <input type="text" id="form6Example3" class="form-control" formControlName="Name" />
-    <label class="form-label" for="form6Example3">Name</label>
+    <label class="form-label" for="form6Example3" i18n>Name</label>
   </div>
 
   <!-- Text input -->
   <div class="form-outline mb-4">
     <input type="text" id="form6Example4" class="form-control" formControlName="Email" />
-    <label class="form-label" for="form6Example4">Email</label>
+    <label class="form-label" for="form6Example4" i18n>Email</label>
   </div>
 
   <!-- Email input -->
@@ -18,40 +18,40 @@
 
     <!-- <input type="email" id="form6Example5" class="form-control" formControlName="CountryCode" /> -->
     <select class="custom-select form-control"  formControlName="CountryCode">
-      <option value="">Choose your city</option>
+      <option value="" i18n>Choose your city</option>
       <option *ngFor="let code of codes" value="{{code.Code}}">{{code.Name}}</option>
     </select>
-    <label class="form-label" for="form6Example5">CountryCode</label>
+    <label class="form-label" for="form6Example5" i18n>CountryCode</label>
 
   </div>
 
   <!-- Number input -->
   <div class="form-outline mb-4">
     <input type="number" id="form6Example6" class="form-control" formControlName="PhoneNumber"/>
-    <label class="form-label" for="form6Example6">PhoneNumber</label>
+    <label class="form-label" for="form6Example6" i18n>PhoneNumber</label>
   </div>
 
   <!-- Message input -->
   <div class="form-outline mb-4">
     <input class="form-control" id="form6Example7" rows="4" formControlName="JobTitle">
-    <label class="form-label" for="form6Example7">JobTitle</label>
+    <label class="form-label" for="form6Example7" i18n>JobTitle</label>
   </div>
 
     <!-- Message input -->
     <div class="form-outline mb-4">
       <input class="form-control" id="form6Example7" rows="4" formControlName="Area">
-      <label class="form-label" for="form6Example7">Area</label>
+      <label class="form-label" for="form6Example7" i18n>Area</label>
     </div>
 
       <!-- Message input -->
   <div class="form-outline mb-4">
     <input class="form-control" id="form6Example7" rows="4" formControlName="Topics">
-    <label class="form-label" for="form6Example7">Topics</label>
+    <label class="form-label" for="form6Example7" i18n>Topics</label>
   </div>
 
 
   <!-- Submit button -->
-  <button type="submit" class="w-100 btn btn-primary btn-block mb-4">
+  <button type="submit" class="w-100 btn btn-primary btn-block mb-4" i18n>
     Submit
   </button>
 </form>
